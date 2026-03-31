@@ -17,11 +17,6 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
           <h3 className="font-display text-lg font-semibold text-foreground">
             {item.name}
           </h3>
-          {item.nameJp && (
-            <span className="text-xs text-muted-foreground font-body">
-              {item.nameJp}
-            </span>
-          )}
           {item.tag && (
             <span className="text-[10px] uppercase tracking-widest font-body px-2 py-0.5 bg-primary/20 text-accent rounded-sm">
               {item.tag}
@@ -33,7 +28,7 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
         </p>
         {item.pieces && (
           <span className="text-xs text-muted-foreground/70 font-body mt-1 inline-block">
-            {item.pieces} peças
+            {item.pieces} unidades
           </span>
         )}
         <StarRating itemId={item.id} />

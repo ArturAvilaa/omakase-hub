@@ -1,11 +1,11 @@
-import heroImage from "@/assets/hero-sushi.jpg";
+import heroImage from "@/assets/hero-churrascaria.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen min-h-[600px] flex items-end">
       <img
         src={heroImage}
-        alt="Sushi artesanal premium"
+        alt="Churrascaria premium com carnes nobres na brasa"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
@@ -13,14 +13,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="relative z-10 container mx-auto px-6 pb-20">
         <p className="font-body text-sm tracking-[0.4em] uppercase text-accent mb-4">
-          Culinária Japonesa Autêntica
+          Churrascaria Premium
         </p>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4">
-          <span className="text-gradient-gold">桜</span>{" "}
-          <span className="text-foreground">Sakura</span>
+          <span className="text-gradient-gold">Brasa</span>{" "}
+          <span className="text-foreground">& Honra</span>
         </h1>
         <p className="font-display text-xl md:text-2xl text-secondary-foreground italic max-w-lg">
-          Uma experiência gastronômica que honra a tradição japonesa
+          O verdadeiro sabor da carne na brasa, tradição gaúcha com excelência
         </p>
         <div className="mt-8 flex gap-4">
           <a
