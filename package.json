@@ -1,13 +1,12 @@
 {
   "private": true,
+  "workspaces": [
+    "client"
+  ],
   "scripts": {
-    "dev": "cd client && bun run dev",
-    "build": "cd client && bun run build",
-    "build:dev": "cd client && bun run build:dev",
-    "test": "cd client && bun run test"
-  },
-  "dependencies": {
-    "@lovable.dev/cloud-auth-js": "^1.0.1",
-    "@supabase/supabase-js": "^2.101.1"
+    "dev": "bun --cwd client run dev",
+    "build": "bun --cwd client run build",
+    "build:dev": "bun --cwd client run build:dev",
+    "test": "bun --cwd client run test"
   }
 }
