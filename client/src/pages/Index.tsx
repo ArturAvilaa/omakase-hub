@@ -7,6 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
+import AuthButton from "@/components/AuthButton";
 import { menuCategories, rodizioCategories } from "@/data/menuData";
 
 const Index = () => {
