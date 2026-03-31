@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "cd client && npm run dev",
-    "build": "cd client && npm run build",
-    "test": "cd client && npm run test"
+    "dev": "cd client && bun run dev",
+    "build": "cd client && bun run build",
+    "build:dev": "cd client && bun run build:dev",
+    "test": "cd client && bun run test"
   },
   "dependencies": {
     "@lovable.dev/cloud-auth-js": "^1.0.1",
