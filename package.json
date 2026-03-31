@@ -4,9 +4,9 @@
     "client"
   ],
   "scripts": {
-    "dev": "bun --cwd client run dev",
-    "build": "bun --cwd client run build",
-    "build:dev": "bun --cwd client run build:dev",
-    "test": "bun --cwd client run test"
+    "dev": "bun run --cwd client dev",
+    "build": "bun run --cwd client build",
+    "build:dev": "bun run --cwd client build:dev",
+    "test": "bun run --cwd client test"
   }
 }
