@@ -94,6 +94,7 @@ const Index = () => {
     return (
         <div className="min-h-screen bg-background">
             <AuthButton />
+            <HeroSection
                 onCardapioClick={handleCardapioClick}
                 onRodizioClick={handleRodizioClick}
             />
