@@ -1,4 +1,10 @@
 {
+  "private": true,
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "test": "cd client && npm run test"
+  },
   "dependencies": {
     "@lovable.dev/cloud-auth-js": "^1.0.1",
     "@supabase/supabase-js": "^2.101.1"
