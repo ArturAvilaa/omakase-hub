@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "cd client && npx --no-install vite",
-    "build": "cd client && npx --no-install vite build",
-    "build:dev": "cd client && npx --no-install vite build --mode development",
-    "test": "cd client && npx --no-install vitest run"
+    "postinstall": "npm install --prefix client",
+    "dev": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "build:dev": "npm run build:dev --prefix client",
+    "test": "npm run test --prefix client"
   }
 }

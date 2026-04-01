@@ -15,6 +15,53 @@ export interface MenuCategory {
     items: MenuItem[];
 }
 
+export interface AcaiSize {
+    id: string;
+    name: string;
+    size: string;
+    price: number;
+}
+
+export interface AcaiTopping {
+    id: string;
+    name: string;
+    price: number;
+    category: "frutas" | "complementos" | "caldas" | "extras";
+}
+
+export const acaiSizes: AcaiSize[] = [
+    { id: "acai-p", name: "Açaí Pequeno", size: "300ml", price: 16.9 },
+    { id: "acai-m", name: "Açaí Médio", size: "500ml", price: 22.9 },
+    { id: "acai-g", name: "Açaí Grande", size: "700ml", price: 28.9 },
+    { id: "acai-gg", name: "Açaí Família", size: "1L", price: 39.9 },
+];
+
+export const acaiToppings: AcaiTopping[] = [
+    // Frutas
+    { id: "top-banana", name: "Banana", price: 2.0, category: "frutas" },
+    { id: "top-morango", name: "Morango", price: 3.0, category: "frutas" },
+    { id: "top-kiwi", name: "Kiwi", price: 3.5, category: "frutas" },
+    { id: "top-manga", name: "Manga", price: 3.0, category: "frutas" },
+    { id: "top-uva", name: "Uva", price: 3.0, category: "frutas" },
+    // Complementos
+    { id: "top-granola", name: "Granola", price: 2.0, category: "complementos" },
+    { id: "top-aveia", name: "Aveia", price: 1.5, category: "complementos" },
+    { id: "top-pacocinha", name: "Paçoquinha", price: 2.5, category: "complementos" },
+    { id: "top-confete", name: "Confete", price: 2.5, category: "complementos" },
+    { id: "top-amendoim", name: "Amendoim", price: 2.0, category: "complementos" },
+    { id: "top-coco", name: "Coco Ralado", price: 2.0, category: "complementos" },
+    // Caldas
+    { id: "top-leite-cond", name: "Leite Condensado", price: 2.0, category: "caldas" },
+    { id: "top-chocolate", name: "Calda de Chocolate", price: 2.5, category: "caldas" },
+    { id: "top-morango-calda", name: "Calda de Morango", price: 2.5, category: "caldas" },
+    { id: "top-caramelo", name: "Calda de Caramelo", price: 2.5, category: "caldas" },
+    // Extras
+    { id: "top-nutella", name: "Nutella", price: 5.0, category: "extras" },
+    { id: "top-ninho", name: "Leite Ninho", price: 3.5, category: "extras" },
+    { id: "top-bis", name: "Bis", price: 3.0, category: "extras" },
+    { id: "top-kitkat", name: "KitKat", price: 5.0, category: "extras" },
+];
+
 export const menuCategories: MenuCategory[] = [
     {
         id: "carnes-nobres",
@@ -251,6 +298,20 @@ export const menuCategories: MenuCategory[] = [
                 name: "Suco Natural",
                 description: "Laranja, limão, abacaxi ou maracujá",
                 price: 12.9,
+            },
+        ],
+    },
+    {
+        id: "acai",
+        name: "Açaí",
+        nameJp: "🍇",
+        items: [
+            {
+                id: "acai-info",
+                name: "Monte seu Açaí",
+                description: "Monte seu açaí personalizado com frutas, complementos e caldas",
+                price: 16.9,
+                tag: "Monte o Seu",
             },
         ],
     },
