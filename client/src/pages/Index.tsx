@@ -119,12 +119,18 @@ const Index = () => {
                                     </p>
                                 </div>
                             ) : (
-                                filteredCategories.map((category) => (
-                                    <MenuSection
-                                        key={category.id}
-                                        category={category}
-                                    />
-                                ))
+                                filteredCategories.map((category) =>
+                                    category.id === "acai" ? (
+                                        <div key="acai" id="acai">
+                                            <AcaiBuilder />
+                                        </div>
+                                    ) : (
+                                        <MenuSection
+                                            key={category.id}
+                                            category={category}
+                                        />
+                                    )
+                                )
                             )}
                         </main>
                     </>
