@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Check } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
-import AcaiBuilder from "@/components/AcaiBuilder";
 import CategoryNav from "@/components/CategoryNav";
 import MenuSection from "@/components/MenuSection";
 import SearchBar from "@/components/SearchBar";
@@ -119,18 +118,12 @@ const Index = () => {
                                     </p>
                                 </div>
                             ) : (
-                                filteredCategories.map((category) =>
-                                    category.id === "acai" ? (
-                                        <div key="acai" id="acai">
-                                            <AcaiBuilder />
-                                        </div>
-                                    ) : (
-                                        <MenuSection
-                                            key={category.id}
-                                            category={category}
-                                        />
-                                    )
-                                )
+                                filteredCategories.map((category) => (
+                                    <MenuSection
+                                        key={category.id}
+                                        category={category}
+                                    />
+                                ))
                             )}
                         </main>
                     </>
