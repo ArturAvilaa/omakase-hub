@@ -301,6 +301,20 @@ export const menuCategories: MenuCategory[] = [
             },
         ],
     },
+    {
+        id: "acai",
+        name: "Açaí",
+        nameJp: "🍇",
+        items: [
+            {
+                id: "acai-info",
+                name: "Monte seu Açaí",
+                description: "Monte seu açaí personalizado com frutas, complementos e caldas",
+                price: 16.9,
+                tag: "Monte o Seu",
+            },
+        ],
+    },
 ];
 
 export const rodizioCategories: MenuCategory[] = [
