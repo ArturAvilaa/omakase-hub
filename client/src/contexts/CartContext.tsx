@@ -4,11 +4,17 @@ import type { MenuItem } from "@/data/menuData";
 interface CartItem {
   item: MenuItem;
   quantity: number;
+  acaiConfig?: {
+    sizeId: string;
+    sizeLabel: string;
+    complements: string[];
+    totalPrice: number;
+  };
 }
 
 interface CartContextType {
   items: CartItem[];
-  addItem: (item: MenuItem) => void;
+  addItem: (item: MenuItem, acaiConfig?: CartItem["acaiConfig"]) => void;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
@@ -30,12 +36,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const addItem = (item: MenuItem) => {
+  const addItem = (item: MenuItem, acaiConfig?: CartItem["acaiConfig"]) => {
     setItems((prev) => {
-      const existing = prev.find((ci) => ci.item.id === item.id);
+      if (acaiConfig) {
+        const uniqueId = `${item.id}-${Date.now()}`;
+        return [...prev, { item: { ...item, id: uniqueId, price: acaiConfig.totalPrice }, quantity: 1, acaiConfig }];
+      }
+      const existing = prev.find((ci) => ci.item.id === item.id && !ci.acaiConfig);
       if (existing) {
         return prev.map((ci) =>
-          ci.item.id === item.id ? { ...ci, quantity: ci.quantity + 1 } : ci
+          ci.item.id === item.id && !ci.acaiConfig ? { ...ci, quantity: ci.quantity + 1 } : ci
         );
       }
       return [...prev, { item, quantity: 1 }];
