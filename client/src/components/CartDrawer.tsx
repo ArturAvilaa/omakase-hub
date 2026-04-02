@@ -1,9 +1,12 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useCart } from "@/contexts/CartContext";
 import { Minus, Plus, Trash2 } from "lucide-react";
+import { useState } from "react";
+import CheckoutDialog from "./CheckoutDialog";
 
 const CartDrawer = () => {
   const { items, isOpen, setIsOpen, updateQuantity, removeItem, total, clearCart } = useCart();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -62,7 +65,10 @@ const CartDrawer = () => {
                   R$ {total.toFixed(2).replace(".", ",")}
                 </span>
               </div>
-              <button className="w-full bg-primary text-primary-foreground py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:opacity-90 transition-opacity">
+              <button
+                onClick={() => { setIsOpen(false); setCheckoutOpen(true); }}
+                className="w-full bg-primary text-primary-foreground py-3 rounded-sm font-body text-sm tracking-widest uppercase hover:opacity-90 transition-opacity"
+              >
                 Finalizar Pedido
               </button>
               <button
@@ -76,6 +82,7 @@ const CartDrawer = () => {
         )}
       </SheetContent>
     </Sheet>
+    <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
   );
 };
 

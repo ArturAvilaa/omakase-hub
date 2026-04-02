@@ -10,7 +10,7 @@ const CategoryNav = ({ activeCategory, onCategoryChange }: CategoryNavProps) => 
     <nav className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm border-b border-gold py-4">
       <div className="container mx-auto px-6">
         <div className="flex gap-1 overflow-x-auto scrollbar-hide">
-          {menuCategories.map((cat) => (
+          {[...menuCategories, { id: "acai", name: "Monte seu Açaí", nameJp: "🍇", items: [] }].map((cat) => (
             <button
               key={cat.id}
               onClick={() => onCategoryChange(cat.id)}
