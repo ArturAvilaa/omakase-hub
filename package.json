@@ -2,9 +2,13 @@
   "private": true,
   "scripts": {
     "postinstall": "npm install --prefix client",
-    "dev": "npm run dev --prefix client -- --port 8080",
+    "predev": "npm install --prefix client",
+    "dev": "npm run dev --prefix client --",
+    "prebuild": "npm install --prefix client",
     "build": "npm run build --prefix client",
+    "prebuild:dev": "npm install --prefix client",
     "build:dev": "npm run build:dev --prefix client",
+    "pretest": "npm install --prefix client",
     "test": "npm run test --prefix client"
   }
 }
