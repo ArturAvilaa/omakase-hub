@@ -256,6 +256,45 @@ export const menuCategories: MenuCategory[] = [
     },
 ];
 
+export interface AcaiSize {
+    id: string;
+    label: string;
+    ml: number;
+    price: number;
+}
+
+export interface AcaiComplement {
+    id: string;
+    name: string;
+    price: number;
+    category: "fruta" | "calda" | "extra";
+}
+
+export const acaiSizes: AcaiSize[] = [
+    { id: "s1", label: "Pequeno", ml: 300, price: 16.9 },
+    { id: "s2", label: "Médio", ml: 500, price: 22.9 },
+    { id: "s3", label: "Grande", ml: 700, price: 28.9 },
+    { id: "s4", label: "Família", ml: 1000, price: 36.9 },
+];
+
+export const acaiComplements: AcaiComplement[] = [
+    { id: "c1", name: "Morango", price: 3.0, category: "fruta" },
+    { id: "c2", name: "Banana", price: 2.5, category: "fruta" },
+    { id: "c3", name: "Kiwi", price: 3.5, category: "fruta" },
+    { id: "c4", name: "Manga", price: 3.0, category: "fruta" },
+    { id: "c5", name: "Uva", price: 3.5, category: "fruta" },
+    { id: "c6", name: "Leite Condensado", price: 3.0, category: "calda" },
+    { id: "c7", name: "Nutella", price: 5.0, category: "calda" },
+    { id: "c8", name: "Mel", price: 2.5, category: "calda" },
+    { id: "c9", name: "Calda de Chocolate", price: 3.0, category: "calda" },
+    { id: "c10", name: "Granola", price: 3.0, category: "extra" },
+    { id: "c11", name: "Leite em Pó", price: 2.5, category: "extra" },
+    { id: "c12", name: "Paçoca", price: 3.0, category: "extra" },
+    { id: "c13", name: "Confete", price: 3.5, category: "extra" },
+    { id: "c14", name: "Coco Ralado", price: 2.5, category: "extra" },
+    { id: "c15", name: "Amendoim", price: 2.5, category: "extra" },
+];
+
 export const rodizioCategories: MenuCategory[] = [
     {
         id: "rod-carnes",

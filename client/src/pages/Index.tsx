@@ -8,6 +8,7 @@ import CartButton from "@/components/CartButton";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import AuthButton from "@/components/AuthButton";
+import AcaiBuilder from "@/components/AcaiBuilder";
 import { menuCategories, rodizioCategories } from "@/data/menuData";
 
 const Index = () => {
@@ -125,6 +126,7 @@ const Index = () => {
                                     />
                                 ))
                             )}
+                            <AcaiBuilder />
                         </main>
                     </>
                 ) : (
